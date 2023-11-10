@@ -7,22 +7,28 @@ import portrait from './assets/portrait.jpeg'
 const Home = () => {
   return (
     <>
+      {/* Header */}
       <div className='mt-32 flex flex-row items-center justify-center gap-10'>
         <img className="h-40 w-36" src={portrait} alt="My face! haha" />
         <div className='flex flex-col items-center text-transparent text-7xl bg-clip-text bg-gradient-to-r from-black to-blue-400'>
-          <h1 className='text-7xl'>Juan Cruz Stakys</h1>
-          <h2 className='font-normal text-4xl'>- Fullstack developer -</h2>
+          <h1 className='text-4xl md:text-7xl'>Juan Cruz Stakys</h1>
+          <h2 className='text-xl md:text-4xl'>- Fullstack developer -</h2>
         </div>
       </div>
-      <div className='flex flex-row justify-evenly mt-20'>
-        <div className='border-2 px-10 py-4 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl'>
-          <Link className='text-2xl' to='/about'>{"<About/>"}</Link>
+
+      {/* Items */}
+      <div className='flex flex-row justify-evenly xl:justify-center xl:gap-24 mt-28'>
+        {/* About */}
+        <div className='border-2 px-16 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl'>
+          <Link className='text-xl xl:text-4xl' to='/about'>{"<About/>"}</Link>
         </div>
-        <div className='border-2 px-10 py-4 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t'>
-          <Link className='text-2xl' to='/projects'>{"<Projects/>"}</Link>
+        {/* Projects */}
+        <div className='border-2 px-16 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t'>
+          <Link className='text-xl xl:text-4xl' to='/projects'>{"<Projects/>"}</Link>
         </div>
-        <div className='border-2 px-10 py-4 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r'>
-          <Link className='text-2xl' to='/contact'>{"<Contact/>"}</Link>
+        {/* Contact */}
+        <div className='border-2 px-16 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r'>
+          <Link className='text-xl xl:text-4xl' to='/contact'>{"<Contact/>"}</Link>
         </div>
       </div>
     </>
