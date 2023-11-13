@@ -1,12 +1,15 @@
 import './App.css'
 import "@fontsource/source-code-pro";
-import portrait from './assets/portrait.jpeg'
-import { useState, useRef, useReducer } from 'react'
+import portrait from './assets/portrait.png'
+import { useState } from 'react'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-
+import { HiMail } from 'react-icons/hi'
+import ConfettiExplosion from 'react-confetti-explosion';
 
 function App() {
   const [displayDetails, setDisplayDetails] = useState({ about: false, projects: false, contact: false })
+  const [clickCount, setClickCount] = useState(0)
+  const [isExploding, setIsExploding] = useState(false);
 
   const AboutCard = () => (
     <div className='block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl bg-gradient-to-br from-white to-blue-400'>
@@ -26,15 +29,16 @@ function App() {
   )
 
   const ContactCard = () => (
-    <div className='block w-full mb-4 border-1 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-400'>
+    <div className='block w-full mb-4 border-1 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-300'>
       <div className='text-xl w-full'>
         <div>
           <p className='text-sm text-center mb-4'>You can find me at:</p>
         </div>
         <div>
-          <ul className='list-none flex flex-col sm:flex-row justify-evenly'>
-            <li className='flex flex-row gap-2 items-center'> <BsGithub /> <a className='underline hover:font-bold' target="_blank" href="https://github.com/juanstakys/">juanstakys</a></li>
-            <li className='flex flex-row gap-2 items-center'> <BsLinkedin /> <a className='underline hover:font-bold' target="_blank" href="https://www.linkedin.com/in/stak/">stak</a></li>
+          <ul className='list-none flex flex-col sm:flex-row justify-evenly gap-y-3'>
+            <li>  <a className='flex flex-row gap-2 items-center underline hover:font-bold' target="_blank" href="https://github.com/juanstakys/"><BsGithub /> juanstakys</a></li>
+            <li><a className='flex flex-row gap-2 items-center underline hover:font-bold' target="_blank" href="https://www.linkedin.com/in/stak/"> <BsLinkedin />  stak</a></li>
+            <li> <a className=' flex flex-row items-center gap-1 underline hover:font-bold' target='_blank' href="mailto:stakys.jc@gmail.com"><HiMail /> stakys.jc@gmail.com</a></li>
           </ul>
         </div>
       </div>
@@ -44,9 +48,39 @@ function App() {
 
   return (
     <div className="App">
+
+      <div className='absolute left-1/2'>
+        {isExploding &&
+          <ConfettiExplosion
+            force={0.6}
+            duration={2000}
+            particleCount={80}
+            width={1000}
+            onComplete={() => setIsExploding(false)}
+          />
+        }
+      </div>
+
+
       {/* Header */}
       <div className='mt-32 flex flex-col sm:flex-row justify-center gap-x-20 items-center'>
-        <img className="h-40 w-36 mb-5" src={portrait} alt="My face! haha" />
+        <img id="pic" className="header-image h-40 w-36 mb-5" src={portrait} alt="My face! haha" onClick={() => {
+          setClickCount(clickCount + 1)
+          console.log(clickCount)
+          if (clickCount === 5) {
+            document.getElementById('pic')?.animate([
+              { transform: 'rotateY(20deg)' },
+              { transform: 'rotateY(360deg)' },
+              { transform: 'rotateY(0deg)' }
+            ], {
+              duration: 750,
+              iterations: 1
+            })
+            console.log('exploding')
+            setIsExploding(true)
+            setClickCount(0)
+          }
+        }} />
         <div className='flex flex-col items-center text-transparent text-7xl bg-clip-text bg-gradient-to-r from-black to-blue-400'>
           <h1 className='text-4xl md:text-7xl'>Juan Cruz Stakys</h1>
           <h2 className='text-xl md:text-4xl'>- Fullstack developer -</h2>

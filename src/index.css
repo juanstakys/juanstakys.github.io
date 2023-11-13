@@ -21,3 +21,21 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+.header-image {
+  transition: all .3s ease;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.header-image:hover {
+  transform:
+    perspective(250px)
+    rotateY(20deg)
+}
+
+.header-image:active {
+  transform:
+    scale(1.15)
+}
