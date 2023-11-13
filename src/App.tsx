@@ -2,9 +2,38 @@ import './App.css'
 import "@fontsource/source-code-pro";
 import portrait from './assets/portrait.jpeg'
 import { useState } from 'react'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 function App() {
   const [displayDetails, setDisplayDetails] = useState({ about: false, projects: false, contact: false })
+
+  const AboutCard = () => (
+    <div className='block w-3/4 mb-4 mx-auto border-2 px-4 py-3 rounded-xl bg-gradient-to-br from-white to-blue-400'>
+      <p className='text-md'>
+        I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
+      </p>
+    </div>
+  )
+
+  const ProjectsCard = () => (
+    <div className='block w-3/4 mb-4 mx-auto border-2 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-blue-400'>
+      <p className='text-md'>
+        I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
+      </p>
+    </div>
+  )
+
+  const ContactCard = () => (
+    <div className='block w-full mb-4 mx-auto border-2 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-400'>
+      <div className='text-xl'>
+        <p className='text-sm'>You can find me at:</p>
+        <ul className='list-none'>
+          <li className='flex flex-row gap-2 items-center'> <BsGithub /> <a className='hover:underline' target="_blank" href="https://github.com/juanstakys/">juanstakys</a></li>
+          <li className='flex flex-row gap-2 items-center'> <BsLinkedin /> <a className='hover:underline' target="_blank" href="https://www.linkedin.com/in/stak/">stak</a></li>
+        </ul>
+      </div>
+    </div>
+  )
 
   return (
     <div className="App">
@@ -18,17 +47,15 @@ function App() {
       </div>
 
       {/* Items */}
-      <div className='flex flex-col w-full sm:w-auto xl:gap-24 mt-28 items-center'>
+      <div className='flex flex-col sm:flex-row sm:gap-10 xl:gap-24 mt-28 items-center sm:mx-20'>
 
         {/* About */}
         <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl' onClick={() => setDisplayDetails({ about: !displayDetails.about, projects: false, contact: false })}>
           <h3 className='text-xl xl:text-4xl text-center'>{"<About/>"}</h3>
         </div>
         {displayDetails.about &&
-          <div className='w-3/4 mb-4 border-2 px-4 py-3 rounded-xl bg-gradient-to-tl from-white to-blue-400'>
-            <p className='text-md'>
-              I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
-            </p>
+          <div className='sm:hidden'>
+            <AboutCard />
           </div>
         }
 
@@ -37,10 +64,8 @@ function App() {
           <h3 className='text-xl xl:text-4xl text-center'>{"<Projects/>"}</h3>
         </div>
         {displayDetails.projects &&
-          <div className='w-3/4 mb-4 border-2 px-4 py-3 rounded-xl bg-gradient-to-br from-white to-blue-400'>
-            <p className='text-md'>
-              I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
-            </p>
+          <div className='sm:hidden'>
+            <ProjectsCard />
           </div>
         }
 
@@ -49,13 +74,18 @@ function App() {
           <h3 className='text-xl xl:text-4xl text-center'>{"<Contact/>"}</h3>
         </div>
         {displayDetails.contact &&
-          <div className='w-3/4 mb-4 border-2 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-400'>
-            <p className='text-md'>
-              I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
-            </p>
+          <div className='sm:hidden'>
+            <ContactCard />
           </div>
         }
 
+      </div>
+
+      {/* Items from small viewport */}
+      <div className='hidden sm:block'>
+        {displayDetails.about && <AboutCard />}
+        {displayDetails.projects && <ProjectsCard />}
+        {displayDetails.contact && <ContactCard />}
       </div>
     </div>
   )
