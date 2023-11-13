@@ -26,7 +26,7 @@ function App() {
   )
 
   const ContactCard = () => (
-    <div ref={ref} className='block w-full mb-4 border-1 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-400'>
+    <div className='block w-full mb-4 border-1 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-400'>
       <div className='text-xl w-full'>
         <div>
           <p className='text-sm text-center mb-4'>You can find me at:</p>
