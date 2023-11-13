@@ -58,7 +58,7 @@ function App() {
 
         {/* About */}
         <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl hover:font-bold' onClick={() => setDisplayDetails({ about: !displayDetails.about, projects: false, contact: false })}>
-          <h3 className='text-xl xl:text-4xl text-center'>{"<About/>"}</h3>
+          <h3 className='text-xl xl:text-3xl text-center'>{"<About/>"}</h3>
         </div>
         {displayDetails.about &&
           <div className='sm:hidden'>
@@ -68,7 +68,7 @@ function App() {
 
         {/* Projects */}
         <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t hover:font-bold' onClick={() => setDisplayDetails({ about: false, projects: !displayDetails.projects, contact: false })}>
-          <h3 className='text-xl xl:text-4xl text-center'>{"<Projects/>"}</h3>
+          <h3 className='text-xl xl:text-3xl text-center'>{"<Projects/>"}</h3>
         </div>
         {displayDetails.projects &&
           <div className='sm:hidden'>
@@ -80,7 +80,7 @@ function App() {
         <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r hover:font-bold' onClick={() =>
           setDisplayDetails({ about: false, projects: false, contact: !displayDetails.contact })
         }>
-          <h3 className='text-xl xl:text-4xl text-center'>{"<Contact/>"}</h3>
+          <h3 className='text-xl xl:text-3xl text-center'>{"<Contact/>"}</h3>
         </div>
         {displayDetails.contact &&
           <div className='sm:hidden'>
@@ -91,7 +91,7 @@ function App() {
       </div>
 
       {/* Items from small viewport */}
-      <div className='hidden sm:block'>
+      <div className='hidden sm:block mt-8'>
         {displayDetails.about && <AboutCard />}
         {displayDetails.projects && <ProjectsCard />}
         {displayDetails.contact && <ContactCard />}
