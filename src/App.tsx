@@ -52,6 +52,26 @@ function App() {
     document.body.style.background = 'linear-gradient(' + (Math.random() * 360) + 'deg, white 0%, ' + getRandomColor() + ' 100%)'
   }
 
+  const projects = [
+    {
+      name: 'Project 1',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      link: '',
+      image: '',
+    },
+    {
+      name: 'Project 2',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      link: '',
+      image: '',
+    },
+    {
+      name: 'Project 3',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      link: '',
+      image: '',
+    }
+  ]
 
   const AboutCard = () => (
     <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-neutral-100 border-2"}`}>
@@ -67,12 +87,30 @@ function App() {
     </div>
   )
 
+  const ProjectCard = ({ name, description, link, image }) => (
+    <div className={`border-1 px-4 py-3 rounded-xl shadow-md text-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
+      <span className='text-md'>
+        <h3 className='text-xl font-bold'>{name}</h3>
+        <p>{description}</p>
+        <a className='underline decoration-dotted hover:text-xl' href={link} target='_blank'>{link}</a>
+      </span>
+    </div>
+  )
+
   const ProjectsCard = () => (
-    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
-      <p className='text-md'>
-        I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
-        I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
-      </p>
+
+    <div className='flex flex-col w-3/4 gap-y-6 mx-auto'>
+      {
+        projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            name={project.name}
+            description={project.description}
+            link={project.link}
+            image={project.image}
+          />
+        ))
+      }
     </div>
   )
 
