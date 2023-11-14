@@ -54,9 +54,12 @@ function App() {
 
   const projects = [
     {
-      name: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
-      link: '',
+      name: 'Twitter clone',
+      description:
+        `Fullstack project made with React, Tailwind, NextJS, Prisma, MongoDB and NextAuth.
+        It has a login system, a feed, a profile page and a tweet creation page.`
+      ,
+      link: 'https://github.com/juanstakys/twitter-clone',
       image: '',
     },
     {
@@ -95,7 +98,8 @@ function App() {
   }
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, image }) => (
-    <div className={`border-1 px-4 py-3 rounded-xl shadow-md text-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
+    <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md text - md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
+      <img className='h-40 w-36 mb-5' src={portrait} alt="" />
       <span className='text-md'>
         <h3 className='text-xl font-bold'>{name}</h3>
         <p>{description}</p>
