@@ -25,14 +25,23 @@ function App() {
     if (!easterEggDiscovered) return
 
     const notes = [
+      'C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'B4', 'A4', 'G4', 'F4', 'E4', 'D4', 'C4',
+    ]
+
+    const fnaf_melody = [
       'B4', 'C#5', 'B4', 'G#4', 'G#4', 'G#4', 'F#4', 'G#4', 'A4', 'G#4',
       'A4', 'F#4', 'B4', 'G#4', 'E4', 'C#4', 'F#4', 'C4'
     ]
+
+
+    // Melody to play:
+    const melody_to_play: Array<string> = fnaf_melody
+
     if (!muted) {
-      synth.triggerAttackRelease(notes[noteCount], '16n')
+      synth.triggerAttackRelease(melody_to_play[noteCount], '16n')
       setNoteCount(noteCount + 1)
     }
-    if (noteCount === notes.length - 1) {
+    if (noteCount === melody_to_play.length - 1) {
       setNoteCount(0)
     }
 
@@ -45,9 +54,9 @@ function App() {
 
 
   const AboutCard = () => (
-    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-blue-400"}`}>
+    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-neutral-100 border-2"}`}>
       <span className='text-md'>
-        Hi! I'm a programmer from <span className='text-yellow-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
+        Hi! I'm a programmer from <span className='text-blue-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
         <br />
         I have explored many languages (human languages and programming languages). Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy, specially logical thinking.
         <br />
@@ -59,7 +68,7 @@ function App() {
   )
 
   const ProjectsCard = () => (
-    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-blue-400"}`}>
+    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
       <p className='text-md'>
         I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
         I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
@@ -68,16 +77,16 @@ function App() {
   )
 
   const ContactCard = () => (
-    <div className={`block w-full mb-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-green-300"}`}>
+    <div className={`block w-full mb-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-neutral-100 border-2"}`}>
       <div className='text-xl w-full'>
         <div>
           <p className='text-sm text-center mb-4'>You can find me at:</p>
         </div>
         <div>
           <ul className='list-none flex flex-col sm:flex-row justify-evenly gap-y-3'>
-            <li>  <a className='flex flex-row gap-2 items-center underline hover:font-bold' target="_blank" href="https://github.com/juanstakys/"><BsGithub /> juanstakys</a></li>
-            <li><a className='flex flex-row gap-2 items-center underline hover:font-bold' target="_blank" href="https://www.linkedin.com/in/stak/"> <BsLinkedin />  stak</a></li>
-            <li> <a className=' flex flex-row items-center gap-1 underline hover:font-bold' target='_blank' href="mailto:stakys.jc@gmail.com"><HiMail /> stakys.jc@gmail.com</a></li>
+            <li><a className='flex flex-row gap-2 items-center underline hover:font-bold' target="_blank" href="https://github.com/juanstakys/"><BsGithub /> juanstakys</a></li>
+            <li><a className='flex flex-row gap-2 items-center underline hover:font-bold' target="_blank" href="https://www.linkedin.com/in/stak/"> <BsLinkedin color={"#0072b1"} />  stak</a></li>
+            <li><a className=' flex flex-row items-center gap-1 underline hover:font-bold' target='_blank' href="mailto:stakys.jc@gmail.com"><HiMail /> stakys.jc@gmail.com</a></li>
           </ul>
         </div>
       </div>
