@@ -5,20 +5,49 @@ import { useState } from 'react'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { HiMail } from 'react-icons/hi'
 import ConfettiExplosion from 'react-confetti-explosion';
+import * as Tone from 'tone'
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [displayDetails, setDisplayDetails] = useState({ about: false, projects: false, contact: false })
   const [clickCount, setClickCount] = useState(0)
   const [isExploding, setIsExploding] = useState(false);
+  const [easterEggDiscovered, setEasterEggDiscovered] = useState(false)
+  const [noteCount, setNoteCount] = useState(0)
+
+  const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink'];
+
+  const synth = new Tone.Synth().toDestination();
+
+  const playNote = () => {
+    if (!easterEggDiscovered) return
+
+    const notes = [
+      'B4', 'C#5', 'B4', 'G#4', 'G#4', 'G#4', 'F#4', 'G#4', 'A4', 'G#4',
+      'A4', 'F#4', 'B4', 'G#4', 'E4', 'C#4', 'F#4', 'C4'
+    ]
+    synth.triggerAttackRelease(notes[noteCount], '16n')
+    setNoteCount(noteCount + 1)
+    if (noteCount === notes.length - 1) {
+      setNoteCount(0)
+    }
+
+    function getRandomColor() {
+      return (colors[Math.floor(Math.random() * colors.length)])
+    }
+
+    document.body.style.background = 'linear-gradient(' + (Math.random() * 360) + 'deg, white 0%, ' + getRandomColor() + ' 100%)'
+  }
+
 
   const AboutCard = () => (
-    <div className='block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-blue-400'>
+    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-blue-400"}`}>
       <span className='text-md'>
         Hi! I'm a programmer from <span className='text-yellow-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after I started working as a Software Developer at a consultant in my country.
         <br />
         I have explored many languages (human languages and programming languages). Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy, specially logical thinking.
         <br />
-        Nowadays I'm studying Systems engineering at Universidad Tecnológica Nacional.
+        Nowadays I'm studying Systems engineering at <a className='underline decoration-dotted hover:text-xl' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
         <br />
         I love making projects and I'm eager to participate in new, exciting ones.
       </span>
@@ -26,7 +55,7 @@ function App() {
   )
 
   const ProjectsCard = () => (
-    <div className='block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl bg-gradient-to-br from-white to-blue-400'>
+    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-blue-400"}`}>
       <p className='text-md'>
         I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
         I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.I'm a fullstack software developer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae tenetur atque aspernatur eos. Quis blanditiis facilis soluta quidem pariatur ea alias libero adipisci vel reiciendis, aperiam odit officia. Delectus.
@@ -35,7 +64,7 @@ function App() {
   )
 
   const ContactCard = () => (
-    <div className='block w-full mb-4 border-1 px-4 py-3 rounded-xl bg-gradient-to-b from-white to-green-300'>
+    <div className={`block w-full mb-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-green-300"}`}>
       <div className='text-xl w-full'>
         <div>
           <p className='text-sm text-center mb-4'>You can find me at:</p>
@@ -53,7 +82,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{ "fontFamily": "Coda" }}>
+
+      <div><Toaster /></div>
+
 
       <div className='absolute left-1/2'>
         {isExploding &&
@@ -84,7 +116,15 @@ function App() {
             })
             console.log('exploding')
             setIsExploding(true)
+            setEasterEggDiscovered(true)
             setClickCount(0)
+
+            toast('Easter egg found!', {
+              icon: '🎉',
+              style: {
+                background: 'lightgreen',
+              }
+            })
           }
         }} />
         <div className='flex flex-col items-center text-transparent text-7xl bg-clip-text bg-gradient-to-r from-black to-blue-400'>
@@ -97,7 +137,11 @@ function App() {
       <div className='flex flex-col sm:flex-row sm:gap-10 xl:gap-24 mt-20 items-center sm:mx-20'>
 
         {/* About */}
-        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl hover:font-bold' onClick={() => setDisplayDetails({ about: !displayDetails.about, projects: false, contact: false })}>
+        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl hover:font-bold hover:shadow' onClick={() => {
+          setDisplayDetails({ about: !displayDetails.about, projects: false, contact: false })
+
+          playNote()
+        }}>
           <h3 className='text-xl xl:text-3xl text-center'>{"<About/>"}</h3>
         </div>
         {displayDetails.about &&
@@ -107,7 +151,11 @@ function App() {
         }
 
         {/* Projects */}
-        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t hover:font-bold' onClick={() => setDisplayDetails({ about: false, projects: !displayDetails.projects, contact: false })}>
+        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t hover:font-bold hover:shadow' onClick={() => {
+          setDisplayDetails({ about: false, projects: !displayDetails.projects, contact: false })
+
+          playNote()
+        }}>
           <h3 className='text-xl xl:text-3xl text-center'>{"<Projects/>"}</h3>
         </div>
         {displayDetails.projects &&
@@ -117,9 +165,11 @@ function App() {
         }
 
         {/* Contact */}
-        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r hover:font-bold' onClick={() =>
+        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r hover:font-bold hover:shadow' onClick={() => {
           setDisplayDetails({ about: false, projects: false, contact: !displayDetails.contact })
-        }>
+
+          playNote()
+        }}>
           <h3 className='text-xl xl:text-3xl text-center'>{"<Contact/>"}</h3>
         </div>
         {displayDetails.contact &&
