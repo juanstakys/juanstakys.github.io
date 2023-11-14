@@ -87,7 +87,14 @@ function App() {
     </div>
   )
 
-  const ProjectCard = ({ name, description, link, image }) => (
+  interface ProjectCardProps {
+    name: string,
+    description: string,
+    link: string,
+    image: string,
+  }
+
+  const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, image }) => (
     <div className={`border-1 px-4 py-3 rounded-xl shadow-md text-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
       <span className='text-md'>
         <h3 className='text-xl font-bold'>{name}</h3>
