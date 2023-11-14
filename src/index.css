@@ -32,10 +32,10 @@ h1 {
 .header-image:hover {
   transform:
     perspective(250px)
-    rotateY(20deg)
+    rotateY(10deg)
 }
 
 .header-image:active {
   transform:
-    scale(1.15)
+    scale(1.1)
 }

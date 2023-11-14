@@ -2,7 +2,8 @@ import './App.css'
 import "@fontsource/source-code-pro";
 import portrait from './assets/portrait.png'
 import { useState } from 'react'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { BsFillVolumeUpFill, BsGithub, BsLinkedin } from 'react-icons/bs'
+import { BiSolidVolumeMute } from 'react-icons/bi'
 import { HiMail } from 'react-icons/hi'
 import ConfettiExplosion from 'react-confetti-explosion';
 import * as Tone from 'tone'
@@ -14,6 +15,7 @@ function App() {
   const [isExploding, setIsExploding] = useState(false);
   const [easterEggDiscovered, setEasterEggDiscovered] = useState(false)
   const [noteCount, setNoteCount] = useState(0)
+  const [muted, setMuted] = useState(false)
 
   const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink'];
 
@@ -43,7 +45,7 @@ function App() {
   const AboutCard = () => (
     <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-blue-400"}`}>
       <span className='text-md'>
-        Hi! I'm a programmer from <span className='text-yellow-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after I started working as a Software Developer at a consultant in my country.
+        Hi! I'm a programmer from <span className='text-yellow-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
         <br />
         I have explored many languages (human languages and programming languages). Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy, specially logical thinking.
         <br />
@@ -86,6 +88,10 @@ function App() {
 
       <div><Toaster /></div>
 
+      <div className='absolute top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
+        <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
+        {/* TO-DO: Dark mode */}
+      </div>
 
       <div className='absolute left-1/2'>
         {isExploding &&
@@ -116,9 +122,11 @@ function App() {
             })
             console.log('exploding')
             setIsExploding(true)
-            setEasterEggDiscovered(true)
             setClickCount(0)
 
+            if (easterEggDiscovered) return
+
+            setEasterEggDiscovered(true)
             toast('Easter egg found!', {
               icon: '🎉',
               style: {
