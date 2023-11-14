@@ -134,7 +134,7 @@ function App() {
       </div>
 
       {/* Items */}
-      <div className='flex flex-col sm:flex-row sm:gap-10 xl:gap-24 mt-20 items-center sm:mx-20'>
+      <div className='flex flex-col sm:flex-row sm:gap-10 xl:gap-24 mt-20 items-center sm:mx-20 text-2xl xl:text-3xl text-center'>
 
         {/* About */}
         <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl hover:font-bold hover:shadow' onClick={() => {
@@ -142,7 +142,7 @@ function App() {
 
           playNote()
         }}>
-          <h3 className='text-xl xl:text-3xl text-center'>{"<About/>"}</h3>
+          <h3>{"<About/>"}</h3>
         </div>
         {displayDetails.about &&
           <div className='sm:hidden'>
@@ -156,7 +156,7 @@ function App() {
 
           playNote()
         }}>
-          <h3 className='text-xl xl:text-3xl text-center'>{"<Projects/>"}</h3>
+          <h3>{"<Projects/>"}</h3>
         </div>
         {displayDetails.projects &&
           <div className='sm:hidden'>
@@ -170,7 +170,7 @@ function App() {
 
           playNote()
         }}>
-          <h3 className='text-xl xl:text-3xl text-center'>{"<Contact/>"}</h3>
+          <h3>{"<Contact/>"}</h3>
         </div>
         {displayDetails.contact &&
           <div className='sm:hidden'>
