@@ -28,8 +28,10 @@ function App() {
       'B4', 'C#5', 'B4', 'G#4', 'G#4', 'G#4', 'F#4', 'G#4', 'A4', 'G#4',
       'A4', 'F#4', 'B4', 'G#4', 'E4', 'C#4', 'F#4', 'C4'
     ]
-    synth.triggerAttackRelease(notes[noteCount], '16n')
-    setNoteCount(noteCount + 1)
+    if (!muted) {
+      synth.triggerAttackRelease(notes[noteCount], '16n')
+      setNoteCount(noteCount + 1)
+    }
     if (noteCount === notes.length - 1) {
       setNoteCount(0)
     }
