@@ -57,21 +57,44 @@ function App() {
       name: 'Twitter clone',
       description:
         `Fullstack project made with React, Tailwind, NextJS, Prisma, MongoDB and NextAuth.
-        It has a login system, a feed, a profile page and a tweet creation page.`
+        It features posting tweets, following users, liking, commenting, notifications, editing profile, and more.`
       ,
       link: 'https://github.com/juanstakys/twitter-clone',
       image: '',
     },
     {
-      name: 'Project 2',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
-      link: '',
+      name: 'Racist-o-meter',
+      description:
+        `Flutter mobile and ReactJS webapp that uses voice recognition and ChatGPT to detect if a satetement is racist or not. It also gives a brief explanation of why it is racist, and uses MongoDB to save new responses and avoid redundant requests to the ChatGPT API. The backend uses NodeJS.`
+      ,
+      link: 'https://github.com/juanstakys/racist-o-meter',
       image: '',
     },
     {
-      name: 'Project 3',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
-      link: '',
+      name: 'Ajedrez a voz (Chess by voice)',
+      description:
+        `Web-based chessboard commanded by voice. Ideal for people with special accesibility needs.
+        Great for people practicing chess coordinates.`
+      ,
+      link: 'https://github.com/juanstakys/ajedrez-a-voz',
+      image: '',
+    },
+    {
+      name: 'Conteo de palabras conocidas (Known words counter)',
+      description: "My first original project: A Python program that shows random words from the Spanish dictionary, one at the time, and by selecting which ones you know and which ones you don't it estimates how many words of the dictionary you know.",
+      link: 'https://github.com/juanstakys/conteo-de-palabras-conocidas',
+      image: '',
+    },
+    {
+      name: 'Email excel extractor',
+      description: "Python script that uses Gmail's API to extract emails with a specific subject and saves all Excel attachments.",
+      link: 'https://github.com/juanstakys/email-excel-extractor',
+      image: '',
+    },
+    {
+      name: 'Proyecto IOT (Olimpiadas INET) - IOT Project (INET Olympiads)',
+      description: 'At the INET 2021 virtual Olympics we were asked to solve a problem that arose in times of COVID-19. It is based on creating a capacity management system, for that we implement web and Arduino technologies.',
+      link: 'https://github.com/tgcorias/INET-Grupo-8',
       image: '',
     }
   ]
@@ -98,17 +121,17 @@ function App() {
   }
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, image }) => (
-    <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md text - md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
+    <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
       <img className='h-40 w-36 mb-5' src={portrait} alt="" />
-      <span className='text-md'>
+      <div className='text-md break-words'>
         <h3 className='text-xl font-bold'>{name}</h3>
-        <p>{description}</p>
-        <a className='underline decoration-dotted hover:text-xl' href={link} target='_blank'>{link}</a>
-      </span>
+        <p className='text-sm sm:text-md'>{description}</p>
+        <a className='text-sm sm:text-md underline decoration-dotted hover:font-bold text-blue-800 hover:text-blue-700' href={link} target='_blank'>{link}</a>
+      </div>
     </div>
   )
 
-  const ProjectsCard = () => (
+  const ProjectsCards = () => (
 
     <div className='flex flex-col w-3/4 gap-y-6 mx-auto'>
       {
@@ -227,8 +250,8 @@ function App() {
           <h3>{"<Projects/>"}</h3>
         </div>
         {displayDetails.projects &&
-          <div className='sm:hidden'>
-            <ProjectsCard />
+          <div className='pb-10 sm:hidden'>
+            <ProjectsCards />
           </div>
         }
 
@@ -251,7 +274,7 @@ function App() {
       {/* Items from small viewport */}
       <div className='hidden sm:block mt-8'>
         {displayDetails.about && <AboutCard />}
-        {displayDetails.projects && <ProjectsCard />}
+        {displayDetails.projects && <ProjectsCards />}
         {displayDetails.contact && <ContactCard />}
       </div>
     </div>
