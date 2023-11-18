@@ -249,7 +249,7 @@ function App() {
             if (easterEggDiscovered) return
 
             setEasterEggDiscovered(true)
-            toast('Easter egg found!', {
+            toast('You found an easter egg!', {
               icon: '🎉',
               style: {
                 background: 'lightgreen',
