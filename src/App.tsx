@@ -173,6 +173,7 @@ function App() {
 
       <div><Toaster /></div>
 
+      {/* Modal carousel */}
       {showCarousel ? (
         <>
           <div
