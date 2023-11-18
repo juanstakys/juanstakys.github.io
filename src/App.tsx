@@ -260,7 +260,7 @@ function App() {
         }} />
         <div className='flex flex-col items-center text-transparent text-7xl bg-clip-text bg-gradient-to-r from-black to-blue-400'>
           <h1 className='text-4xl md:text-7xl'>Juan Cruz Stakys</h1>
-          <h2 className='text-xl md:text-4xl'>- Fullstack developer -</h2>
+          <h2 className='select-none text-xl md:text-4xl'>- Fullstack developer -</h2>
         </div>
       </div>
 
@@ -268,7 +268,7 @@ function App() {
       <div className='flex flex-col sm:flex-row sm:gap-10 xl:gap-24 mt-20 items-center sm:mx-20 text-2xl xl:text-3xl text-center'>
 
         {/* About */}
-        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl hover:font-bold hover:shadow' onClick={() => {
+        <div className='select-none w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-tl hover:font-bold hover:shadow' onClick={() => {
           setDisplayDetails({ about: !displayDetails.about, projects: false, contact: false })
 
           playNote()
@@ -282,7 +282,7 @@ function App() {
         }
 
         {/* Projects */}
-        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t hover:font-bold hover:shadow' onClick={() => {
+        <div className='select-none w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-t hover:font-bold hover:shadow' onClick={() => {
           setDisplayDetails({ about: false, projects: !displayDetails.projects, contact: false })
 
           playNote()
@@ -296,7 +296,7 @@ function App() {
         }
 
         {/* Contact */}
-        <div className='w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r hover:font-bold hover:shadow' onClick={() => {
+        <div className='select-none w-1/2 mb-4 border-2 py-12 rounded-xl bg-gradient-to-br from-white to-neutral-100 hover:bg-gradient-to-r hover:font-bold hover:shadow' onClick={() => {
           setDisplayDetails({ about: false, projects: false, contact: !displayDetails.contact })
 
           playNote()
