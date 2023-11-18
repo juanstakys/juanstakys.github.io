@@ -2,6 +2,7 @@ import './App.css'
 import "@fontsource/source-code-pro";
 import portrait from './assets/portrait.png'
 import { useState } from 'react'
+import { AiOutlineClose } from "react-icons/ai";
 import { BsFillVolumeUpFill, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { BiSolidVolumeMute } from 'react-icons/bi'
 import { HiMail } from 'react-icons/hi'
@@ -10,6 +11,7 @@ import * as Tone from 'tone'
 import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
+  const [showCarousel, setShowCarousel] = useState(false);
   const [displayDetails, setDisplayDetails] = useState({ about: false, projects: false, contact: false })
   const [clickCount, setClickCount] = useState(0)
   const [isExploding, setIsExploding] = useState(false);
@@ -56,11 +58,11 @@ function App() {
     {
       name: 'Twitter clone',
       description:
-        `Fullstack project made with React, Tailwind, NextJS, Prisma, MongoDB and NextAuth.
+        `Fullstack project made with React, Tailwind, NextJS, Prisma, MongoDB and NextAuth. Responsive and mobile-first.
         It features posting tweets, following users, liking, commenting, notifications, editing profile, and more.`
       ,
       link: 'https://github.com/juanstakys/twitter-clone',
-      image: '',
+      images: ['/public/images/twitter_clone/home.png', '/public/images/twitter_clone/notifications.png'],
     },
     {
       name: 'Racist-o-meter',
@@ -68,7 +70,7 @@ function App() {
         `Flutter mobile and ReactJS webapp that uses voice recognition and ChatGPT to detect if a satetement is racist or not. It also gives a brief explanation of why it is racist, and uses MongoDB to save new responses and avoid redundant requests to the ChatGPT API. The backend uses NodeJS.`
       ,
       link: 'https://github.com/juanstakys/racist-o-meter',
-      image: '',
+      images: [portrait],
     },
     {
       name: 'Ajedrez a voz (Chess by voice)',
@@ -77,25 +79,25 @@ function App() {
         Great for people practicing chess coordinates.`
       ,
       link: 'https://github.com/juanstakys/ajedrez-a-voz',
-      image: '',
+      images: [portrait],
     },
     {
       name: 'Conteo de palabras conocidas (Known words counter)',
       description: "My first original project: A Python program that shows random words from the Spanish dictionary, one at the time, and by selecting which ones you know and which ones you don't it estimates how many words of the dictionary you know.",
       link: 'https://github.com/juanstakys/conteo-de-palabras-conocidas',
-      image: '',
+      images: [portrait],
     },
     {
       name: 'Email excel extractor',
       description: "Python script that uses Gmail's API to extract emails with a specific subject and saves all Excel attachments.",
       link: 'https://github.com/juanstakys/email-excel-extractor',
-      image: '',
+      images: [portrait],
     },
     {
       name: 'Proyecto IOT (Olimpiadas INET) - IOT Project (INET Olympiads)',
       description: 'At the INET 2021 virtual Olympics we were asked to solve a problem that arose in times of COVID-19. It is based on creating a capacity management system, for that we implement web and Arduino technologies.',
       link: 'https://github.com/tgcorias/INET-Grupo-8',
-      image: '',
+      images: [portrait],
     }
   ]
 
@@ -117,12 +119,12 @@ function App() {
     name: string,
     description: string,
     link: string,
-    image: string,
+    images: Array<string>,
   }
 
-  const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, image }) => (
+  const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, images }) => (
     <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
-      <img className='h-40 w-36 mb-5' src={portrait} alt="" />
+      <img className='h-40 w-36 mb-5' src={images[0]} alt="" onClick={() => setShowCarousel(true)} />
       <div className='text-md break-words'>
         <h3 className='text-xl font-bold'>{name}</h3>
         <p className='text-sm sm:text-md'>{description}</p>
@@ -141,7 +143,7 @@ function App() {
             name={project.name}
             description={project.description}
             link={project.link}
-            image={project.image}
+            images={project.images}
           />
         ))
       }
@@ -170,6 +172,43 @@ function App() {
     <div className="App" style={{ "fontFamily": "Coda" }}>
 
       <div><Toaster /></div>
+
+      {showCarousel ? (
+        <>
+          <div
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+          >
+            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+              {/*content*/}
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                {/*header*/}
+                <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                  <h3 className="text-3xl font-semibold">
+                    Modal Title
+                  </h3>
+                  <button
+                    className=""
+                    onClick={() => setShowCarousel(false)}
+                  >
+                    <AiOutlineClose />
+                  </button>
+                </div>
+                {/*body*/}
+                <div className="relative p-6 flex-auto">
+                  <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                    I always felt like I could do anything. That’s the main
+                    thing people are controlled by! Thoughts- their perception
+                    of themselves! They're slowed down by their perception of
+                    themselves. If you're taught you can’t do anything, you
+                    won’t do anything. I was taught I could do everything.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
 
       <div className='absolute top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
         <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
