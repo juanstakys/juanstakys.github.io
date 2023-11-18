@@ -1,10 +1,11 @@
 import './App.css'
 import "@fontsource/source-code-pro";
 import portrait from './assets/portrait.png'
-import { useState } from 'react'
-import { AiOutlineClose } from "react-icons/ai";
+import { useState, useContext } from 'react'
+import { IoMdCloseCircle } from "react-icons/io";
 import { BsFillVolumeUpFill, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { BiSolidVolumeMute } from 'react-icons/bi'
+import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
 import ConfettiExplosion from 'react-confetti-explosion';
 import * as Tone from 'tone'
@@ -167,35 +168,41 @@ function App() {
     </div >
   )
 
-  const ModalCarousel = () => (
+  const CarouselButton = ({ left }: { left?: boolean }) => (
+    <div
+      className='select-none hover:cursor-pointer text-neutral-500 text-3xl'
+      onClick={() => { { left ? console.log('left') : console.log('right') } }}
+    >
+      {left ? (<FaChevronCircleLeft />)
+        : (<FaChevronCircleRight />)}
+    </div>
+  )
+
+
+  const ModalCarousel = ({ images }: { images: Array<string> }) => (
     <>
       <div
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           {/*content*/}
-          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+          <div className="">
             {/*header*/}
-            <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-              <h3 className="text-3xl font-semibold">
-                Modal Title
-              </h3>
+            <div className="absolute right-0 -top-10">
               <button
-                className=""
+                className="text-4xl text-neutral-200 hover:text-red-200 hover:cursor-pointer"
                 onClick={() => setShowCarousel(false)}
               >
-                <AiOutlineClose />
+                <IoMdCloseCircle />
               </button>
             </div>
             {/*body*/}
-            <div className="relative p-6 flex-auto">
-              <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                I always felt like I could do anything. That’s the main
-                thing people are controlled by! Thoughts- their perception
-                of themselves! They're slowed down by their perception of
-                themselves. If you're taught you can’t do anything, you
-                won’t do anything. I was taught I could do everything.
-              </p>
+            <div className="flex flex-row items-center gap-x-2">
+              <CarouselButton left />
+              <div className="overflow-hidden">
+                <img src={images[imgNumber]} alt="" style={{ maxWidth: "100%", height: "auto" }} />
+              </div>
+              <CarouselButton />
             </div>
           </div>
         </div>
@@ -210,7 +217,7 @@ function App() {
       <div><Toaster /></div>
 
       {/* Modal carousel */}
-      {showCarousel ? <ModalCarousel /> : null}
+      {showCarousel ? <ModalCarousel images={projects[0].images} /> : null}
 
       <div className='absolute top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
         <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
