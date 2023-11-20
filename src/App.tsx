@@ -124,19 +124,21 @@ function App() {
   }
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, images }) => (
-    <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
-      <img className='h-40 w-36 mb-5' src={images[0]} alt="" onClick={() => setShowCarousel(true)} />
-      <div className='text-md break-words'>
+    <div className={`break-words flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
+      <img className='h-40 w-36' src={images[0]} alt="" onClick={() => setShowCarousel(true)} />
+      <div className='w-1/2 sm:w-3/4'>
         <h3 className='text-xl font-bold'>{name}</h3>
         <p className='text-sm sm:text-md'>{description}</p>
-        <a className='text-sm sm:text-md underline decoration-dotted hover:font-bold text-blue-800 hover:text-blue-700' href={link} target='_blank'>{link}</a>
+        <a className='text-sm sm:text-md truncate underline decoration-dotted hover:font-bold text-blue-800 hover:text-blue-700' href={link} target='_blank'>
+          Link to the project repo
+        </a>
       </div>
     </div>
   )
 
   const ProjectsCards = () => (
 
-    <div className='flex flex-col w-3/4 gap-y-6 mx-auto'>
+    <div className='flex flex-col text-left sm:text-center w-full sm:w-3/4 gap-y-6 mx-auto'>
       {
         projects.map((project, index) => (
           <ProjectCard
