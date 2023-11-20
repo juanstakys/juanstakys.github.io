@@ -13,6 +13,8 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [showCarousel, setShowCarousel] = useState(false);
+  const [carouselImage, setCarouselImage] = useState(0);
+  const [displayedProject, setDisplayedProject] = useState(0)
   const [displayDetails, setDisplayDetails] = useState({ about: false, projects: false, contact: false })
   const [clickCount, setClickCount] = useState(0)
   const [isExploding, setIsExploding] = useState(false);
@@ -63,7 +65,7 @@ function App() {
         It features posting tweets, following users, liking, commenting, notifications, editing profile, and more.`
       ,
       link: 'https://github.com/juanstakys/twitter-clone',
-      images: ['/public/images/twitter_clone/home.png', '/public/images/twitter_clone/notifications.png'],
+      images: ['/images/twitter_clone/home.png', '/images/twitter_clone/notifications.png'],
     },
     {
       name: 'Racist-o-meter',
@@ -71,7 +73,7 @@ function App() {
         `Flutter mobile and ReactJS webapp that uses voice recognition and ChatGPT to detect if a satetement is racist or not. It also gives a brief explanation of why it is racist, and uses MongoDB to save new responses and avoid redundant requests to the ChatGPT API. The backend uses NodeJS.`
       ,
       link: 'https://github.com/juanstakys/racist-o-meter',
-      images: [portrait],
+      images: ['/images/racist_o_meter/racistScreen.jpg', '/images/racist_o_meter/resopnseNotRacist.jpg', '/images/racist_o_meter/responseRacist.jpg'],
     },
     {
       name: 'Ajedrez a voz (Chess by voice)',
@@ -125,7 +127,10 @@ function App() {
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, images }) => (
     <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
-      <img className='h-40 w-36' src={images[0]} alt="" onClick={() => setShowCarousel(true)} />
+      <img className='h-40 w-36' src={images[0]} alt="" onClick={() => {
+        setShowCarousel(true)
+        setDisplayedProject(projects.findIndex(project => project.name === name))
+      }} />
       <div className='w-3/4 text-left sm:text-center'>
         <h3 className='text-xl font-bold'>{name}</h3>
         <p className='text-sm sm:text-md'>{description}</p>
@@ -173,11 +178,19 @@ function App() {
   const CarouselButton = ({ left }: { left?: boolean }) => (
     <div
       className='select-none hover:cursor-pointer text-neutral-500 text-3xl'
-      onClick={() => { { left ? console.log('left') : console.log('right') } }}
+      onClick={() => {
+        {
+          left ? (
+            carouselImage === 0 ? setCarouselImage(projects[displayedProject].images.length - 1) : setCarouselImage(carouselImage - 1)
+          ) : (
+            carouselImage === projects[displayedProject].images.length - 1 ? setCarouselImage(0) : setCarouselImage(carouselImage + 1)
+          )
+        }
+      }}
     >
       {left ? (<FaChevronCircleLeft />)
         : (<FaChevronCircleRight />)}
-    </div>
+    </div >
   )
 
 
@@ -193,7 +206,10 @@ function App() {
             <div className="absolute right-0 -top-10">
               <button
                 className="text-4xl text-neutral-200 hover:text-red-200 hover:cursor-pointer"
-                onClick={() => setShowCarousel(false)}
+                onClick={() => {
+                  setShowCarousel(false)
+                  setCarouselImage(0)
+                }}
               >
                 <IoMdCloseCircle />
               </button>
@@ -201,8 +217,11 @@ function App() {
             {/*body*/}
             <div className="flex flex-row items-center gap-x-2">
               <CarouselButton left />
-              <div className="overflow-hidden">
-                <img src={images[0]} alt="" style={{ maxWidth: "100%", height: "auto" }} />
+              <div className="overflow-hidden justify-self-center self-center">
+                <img src={images[carouselImage]}
+                  style={{
+                    "maxHeight": "80vh", "maxWidth": "80vw"
+                  }} />
               </div>
               <CarouselButton />
             </div>
@@ -219,7 +238,7 @@ function App() {
       <div><Toaster /></div>
 
       {/* Modal carousel */}
-      /* {showCarousel ? <ModalCarousel images={projects[0].images} /> : null} */
+      {showCarousel ? <ModalCarousel images={projects[displayedProject].images} /> : null}
 
       <div className='absolute top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
         <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
