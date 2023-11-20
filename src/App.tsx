@@ -168,48 +168,6 @@ function App() {
     </div >
   )
 
-  const CarouselButton = ({ left }: { left?: boolean }) => (
-    <div
-      className='select-none hover:cursor-pointer text-neutral-500 text-3xl'
-      onClick={() => { { left ? console.log('left') : console.log('right') } }}
-    >
-      {left ? (<FaChevronCircleLeft />)
-        : (<FaChevronCircleRight />)}
-    </div>
-  )
-
-
-  const ModalCarousel = ({ images }: { images: Array<string> }) => (
-    <>
-      <div
-        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-      >
-        <div className="relative w-auto my-6 mx-auto max-w-3xl">
-          {/*content*/}
-          <div className="">
-            {/*header*/}
-            <div className="absolute right-0 -top-10">
-              <button
-                className="text-4xl text-neutral-200 hover:text-red-200 hover:cursor-pointer"
-                onClick={() => setShowCarousel(false)}
-              >
-                <IoMdCloseCircle />
-              </button>
-            </div>
-            {/*body*/}
-            <div className="flex flex-row items-center gap-x-2">
-              <CarouselButton left />
-              <div className="overflow-hidden">
-                <img src={images[imgNumber]} alt="" style={{ maxWidth: "100%", height: "auto" }} />
-              </div>
-              <CarouselButton />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-    </>
-  )
 
   return (
     <div className="App" style={{ "fontFamily": "Coda" }}>
@@ -217,7 +175,7 @@ function App() {
       <div><Toaster /></div>
 
       {/* Modal carousel */}
-      {showCarousel ? <ModalCarousel images={projects[0].images} /> : null}
+      {/* {showCarousel ? <ModalCarousel images={projects[0].images} /> : null} */}
 
       <div className='absolute top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
         <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
