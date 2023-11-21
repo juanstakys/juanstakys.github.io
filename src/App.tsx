@@ -127,7 +127,7 @@ function App() {
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, images }) => (
     <div className={`flex flex-row items-center gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
-      <img className='h-40 w-36' src={images[0]} alt="" onClick={() => {
+      <img className='w-36' src={images[0]} alt="" onClick={() => {
         setShowCarousel(true)
         setDisplayedProject(projects.findIndex(project => project.name === name))
       }} />
@@ -220,7 +220,7 @@ function App() {
               <div className="overflow-hidden justify-self-center self-center">
                 <img src={images[carouselImage]}
                   style={{
-                    "maxHeight": "80vh", "maxWidth": "80vw"
+                    "maxHeight": "80vh"
                   }} />
               </div>
               <CarouselButton />
