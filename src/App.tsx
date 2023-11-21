@@ -1,7 +1,7 @@
 import './App.css'
 import "@fontsource/source-code-pro";
 import portrait from './assets/portrait.png'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { IoMdCloseCircle } from "react-icons/io";
 import { BsFillVolumeUpFill, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { BiSolidVolumeMute } from 'react-icons/bi'
