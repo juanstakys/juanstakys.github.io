@@ -109,9 +109,11 @@ function App() {
       <span className='text-md'>
         Hi! I'm a programmer from <span className='text-blue-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
         <br />
+        In secondary school, I discovered that I want to dedicate my life to technology and engineering. I have always been interested in how things work, and I love to learn new things. I'm a very curious person, and I love to solve problems. I'm also very interested in science, specially physics and astronomy. I'm a very logical person, and I love to think about the world and how it works. At that time, I met several friends with the same interests as mine and that helped me to develop my skills and knowledge faster.
+        <br />
         I have explored many languages (human languages and programming languages). Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy, specially logical thinking.
         <br />
-        Nowadays I'm studying Systems engineering at <a className='underline decoration-dotted hover:text-xl' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
+        Nowadays I'm studying Systems engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
         <br />
         I love making projects and I'm eager to participate in new, exciting ones.
       </span>
