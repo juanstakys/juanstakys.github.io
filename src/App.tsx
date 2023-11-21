@@ -240,7 +240,7 @@ function App() {
       {/* Modal carousel */}
       {showCarousel ? <ModalCarousel images={projects[displayedProject].images} /> : null}
 
-      <div className='absolute top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
+      <div className='fixed top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
         <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
         {/* TO-DO: Dark mode */}
       </div>
