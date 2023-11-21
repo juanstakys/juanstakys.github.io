@@ -82,19 +82,19 @@ function App() {
         Great for people practicing chess coordinates.`
       ,
       link: 'https://github.com/juanstakys/ajedrez-a-voz',
-      images: [portrait],
+      images: ['/images/ajedrez_a_voz/starting_position.png', '/images/ajedrez_a_voz/after_several_moves.png'],
     },
     {
       name: 'Conteo de palabras conocidas (Known words counter)',
       description: "My first original project: A Python program that shows random words from the Spanish dictionary, one at the time, and by selecting which ones you know and which ones you don't it estimates how many words of the dictionary you know.",
       link: 'https://github.com/juanstakys/conteo-de-palabras-conocidas',
-      images: [portrait],
+      images: ['/images/conteo_de_palabras_conocidas/1.png', '/images/conteo_de_palabras_conocidas/2.png', '/images/conteo_de_palabras_conocidas/3.png'],
     },
     {
       name: 'Email excel extractor',
       description: "Python script that uses Gmail's API to extract emails with a specific subject and saves all Excel attachments.",
       link: 'https://github.com/juanstakys/email-excel-extractor',
-      images: [portrait],
+      images: ['/images/email_excel_extractor/1.png', '/images/email_excel_extractor/2.png', '/images/email_excel_extractor/3.png', '/images/email_excel_extractor/4.png'],
     },
     {
       name: 'Proyecto IOT (Olimpiadas INET) - IOT Project (INET Olympiads)',
