@@ -3,8 +3,8 @@ import "@fontsource/source-code-pro";
 import portrait from './assets/portrait.png'
 import { useState } from 'react'
 import { IoMdCloseCircle } from "react-icons/io";
-import { BsFillVolumeUpFill, BsGithub, BsLinkedin } from 'react-icons/bs'
-import { BiSolidVolumeMute } from 'react-icons/bi'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { BiSolidVolumeMute, BiSolidVolumeFull } from 'react-icons/bi'
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
 import ConfettiExplosion from 'react-confetti-explosion';
@@ -241,7 +241,7 @@ function App() {
       {showCarousel ? <ModalCarousel images={projects[displayedProject].images} /> : null}
 
       <div className='fixed top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
-        <div onClick={() => setMuted(!muted)}> {muted ? < BsFillVolumeUpFill /> : <BiSolidVolumeMute />} </div>
+        <div onClick={() => setMuted(!muted)}> {muted ? < BiSolidVolumeFull /> : <BiSolidVolumeMute />} </div>
         {/* TO-DO: Dark mode */}
       </div>
 
