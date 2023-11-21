@@ -100,7 +100,7 @@ function App() {
       name: 'Proyecto IOT (Olimpiadas INET) - IOT Project (INET Olympiads)',
       description: 'At the INET 2021 virtual Olympics we were asked to solve a problem that arose in times of COVID-19. It is based on creating a capacity management system, for that we implement web and Arduino technologies.',
       link: 'https://github.com/tgcorias/INET-Grupo-8',
-      images: [portrait],
+      images: ['/images/iot/iot.jpg'],
     }
   ]
 
