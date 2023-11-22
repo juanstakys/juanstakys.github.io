@@ -86,13 +86,13 @@ function App() {
     },
     {
       name: 'Conteo de palabras conocidas (Known words counter)',
-      description: "My first original project: A Python program that shows random words from the Spanish dictionary, one at the time, and by selecting which ones you know and which ones you don't it estimates how many words of the dictionary you know.",
+      description: "My first original project: A Python program that shows random words from the Spanish dictionary, one at the time, and by selecting which ones you know and which ones you don't it estimates how many words of the dictionary you know. You can also click 'Quiero aprenderla' to open a tab with the dictionary definition of the word. It uses Tkinter for the GUI",
       link: 'https://github.com/juanstakys/conteo-de-palabras-conocidas',
       images: ['/images/conteo_de_palabras_conocidas/1.png', '/images/conteo_de_palabras_conocidas/2.png', '/images/conteo_de_palabras_conocidas/3.png'],
     },
     {
       name: 'Email excel extractor',
-      description: "Python script that uses Gmail's API to extract emails with a specific subject and saves all Excel attachments.",
+      description: "Python script that uses Gmail's API to extract emails with a specific subject and saves all Excel attachments. It uses OAuth2.0 for authentication.",
       link: 'https://github.com/juanstakys/email-excel-extractor',
       images: ['/images/email_excel_extractor/1.png', '/images/email_excel_extractor/2.png', '/images/email_excel_extractor/3.png', '/images/email_excel_extractor/4.png'],
     },
@@ -105,7 +105,7 @@ function App() {
   ]
 
   const AboutCard = () => (
-    <div className={`block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-neutral-100 border-2"}`}>
+    <div className={"block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
       <span className='text-md'>
         Hi! I'm a programmer from <span className='text-blue-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
         <br />
@@ -128,8 +128,8 @@ function App() {
   }
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link, images }) => (
-    <div className={`flex flex-row gap-x-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-br from-white to-neutral-100 border-2"}`}>
-      <img className='w-36' src={images[0]} alt="" onClick={() => {
+    <div className={"flex flex-row gap-x-4 border-1 px-4 py-3 rounded-xl shadow-m bg-gradient-to-br from-white to-neutral-100 border-2"}>
+      <img className='w-36 hover:cursor-pointer' src={images[0]} alt="" onClick={() => {
         setShowCarousel(true)
         setDisplayedProject(projects.findIndex(project => project.name === name))
       }} />
@@ -161,7 +161,7 @@ function App() {
   )
 
   const ContactCard = () => (
-    <div className={`block w-full mb-4 border-1 px-4 py-3 rounded-xl shadow-md ${easterEggDiscovered ? "bg-white" : "bg-gradient-to-b from-white to-neutral-100 border-2"}`}>
+    <div className={"block w-full mb-4 border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
       <div className='text-xl w-full'>
         <div>
           <p className='text-sm text-center mb-4'>You can find me at:</p>
@@ -262,7 +262,7 @@ function App() {
 
       {/* Header */}
       <div className='mt-32 flex flex-col sm:flex-row justify-center gap-x-20 items-center'>
-        <img id="pic" className="header-image h-40 w-36 mb-5" src={portrait} alt="My face! haha" onClick={() => {
+        <img id="pic" className="header-image h-40 w-36 mb-5 hover:cursor-pointer" src={portrait} alt="My face! haha" onClick={() => {
           setClickCount(clickCount + 1)
           console.log(clickCount)
           if (clickCount === 5) {
