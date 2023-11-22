@@ -101,19 +101,26 @@ function App() {
   ]
 
   const AboutCard = () => (
-    <div className={"block sm:w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
-      <span className='text-md'>
-        Hi! I'm a passionate programmer from <span className='text-blue-500'>Argentina</span>, with a fervor for MATHS and LANGUAGE LEARNING. I've always been interested in technology and at 15 I started programming in C++. I engaged in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
-        <br />
-        In secondary school, I discovered that I wanted to dedicate my life to technology and engineering, driven by my curiosity about the world and how it works and my enthusiasm for learning everyday and solving all kind of challenging problems. I'm also very interested in science, specially physics and astronomy. I enjoy facing problems with a logical perspective, that was always my greatest strenght. In those years, I met several friends with the same interests as mine and that helped me to develop my skills and knowledge faster.
-        <br />
-        Beyond science and technology, I have a humanistic side. I love learning languages and I'm always looking for new ones to learn. I speak native Spanish and fluent English, and
-        I have explored many other languages. Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy.
-        <br />
-        I am currently pursuing a degree in Systems Engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
-        Driven by a passion for creating innovative projects, I eagerly seek new and exciting opportunities to contribute my skills.
+    <div>
+      <div className={"block sm:w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
+        <span className='text-md'>
+          Hi! I'm a passionate programmer from <span className='text-blue-500'>Argentina</span>, with a fervor for MATHS and LANGUAGE LEARNING. I've always been interested in technology and at 15 I started programming in C++. I engaged in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
+          <br />
+          In secondary school, I discovered that I wanted to dedicate my life to technology and engineering, driven by my curiosity about the world and how it works and my enthusiasm for learning everyday and solving all kind of challenging problems. I'm also very interested in science, specially physics and astronomy. I enjoy facing problems with a logical perspective, that was always my greatest strenght. In those years, I met several friends with the same interests as mine and that helped me to develop my skills and knowledge faster.
+          <br />
+          Beyond science and technology, I have a humanistic side. I love learning languages and I'm always looking for new ones to learn. I speak native Spanish and fluent English, and
+          I have explored many other languages. Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy.
+          <br />
+          I am currently pursuing a degree in Systems Engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
+          Driven by a passion for creating innovative projects, I eagerly seek new and exciting opportunities to contribute my skills.
 
-      </span>
+        </span>
+      </div>
+      <div className={"block sm:w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
+        <span className='text-md'>
+
+        </span>
+      </div>
     </div>
   )
 
@@ -240,7 +247,7 @@ function App() {
       {showCarousel ? <ModalCarousel images={projects[displayedProject].images} /> : null}
 
       <div className='fixed top-0 right-0 bg-neutral-200 rounded-bl p-1 text-2xl'>
-        <div onClick={() => setMuted(!muted)}> {muted ? < BiSolidVolumeFull /> : <BiSolidVolumeMute />} </div>
+        {easterEggDiscovered ? (<div onClick={() => setMuted(!muted)}> {muted ? <BiSolidVolumeMute /> : < BiSolidVolumeFull />} </div>) : null}
         {/* TO-DO: Dark mode */}
       </div>
 
