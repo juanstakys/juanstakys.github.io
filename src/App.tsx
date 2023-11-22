@@ -101,7 +101,7 @@ function App() {
   ]
 
   const AboutCard = () => (
-    <div className={"block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
+    <div className={"block sm:w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
       <span className='text-md'>
         Hi! I'm a passionate programmer from <span className='text-blue-500'>Argentina</span>, with a fervor for MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I engaged in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
         <br />
@@ -304,7 +304,7 @@ function App() {
           <h3>{"<About/>"}</h3>
         </div>
         {displayDetails.about &&
-          <div className='sm:hidden'>
+          <div className='sm:hidden text-sm text-left'>
             <AboutCard />
           </div>
         }
