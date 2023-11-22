@@ -29,10 +29,6 @@ function App() {
   const playNote = () => {
     if (!easterEggDiscovered) return
 
-    const notes = [
-      'C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'B4', 'A4', 'G4', 'F4', 'E4', 'D4', 'C4',
-    ]
-
     const fnaf_melody = [
       'B4', 'C#5', 'B4', 'G#4', 'G#4', 'G#4', 'F#4', 'G#4', 'A4', 'G#4',
       'A4', 'F#4', 'B4', 'G#4', 'E4', 'C#4', 'F#4', 'C4'
@@ -79,7 +75,7 @@ function App() {
       name: 'Ajedrez a voz (Chess by voice)',
       description:
         `Web-based chessboard commanded by voice. Ideal for people with special accesibility needs.
-        Great for people practicing chess coordinates.`
+        Great for people practicing chess coordinates. It uses the Web Speech API and the Chess.js library for validating moves.`
       ,
       link: 'https://github.com/juanstakys/ajedrez-a-voz',
       images: ['/images/ajedrez_a_voz/starting_position.png', '/images/ajedrez_a_voz/after_several_moves.png'],
