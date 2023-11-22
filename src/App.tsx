@@ -107,15 +107,16 @@ function App() {
   const AboutCard = () => (
     <div className={"block w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
       <span className='text-md'>
-        Hi! I'm a programmer from <span className='text-blue-500'>Argentina</span>, very passionate about MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I had participated in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
+        Hi! I'm a passionate programmer from <span className='text-blue-500'>Argentina</span>, with a fervor for MATHS and LANGUAGE LEARNING. I was always interested in technology and at 15 I started programming in C++. I engaged in Maths Olympiads at around the same age, until I finished secondary education. Immediately after that, I started working as a Software Developer at a consultant company in my country.
         <br />
-        In secondary school, I discovered that I want to dedicate my life to technology and engineering. I have always been interested in how things work, and I love to learn new things. I'm a very curious person, and I love to solve problems. I'm also very interested in science, specially physics and astronomy. I'm a very logical person, and I love to think about the world and how it works. At that time, I met several friends with the same interests as mine and that helped me to develop my skills and knowledge faster.
+        In secondary school, I discovered that I want to dedicate my life to technology and engineering, driven by my curiosity about the world and how it works and my enthusiasm for learning everyday and solving all kind of challenging problems. I'm also very interested in science, specially physics and astronomy. I enjoy facing problems with a logical perspective, that was always my greatest strenght. In those years, I met several friends with the same interests as mine and that helped me to develop my skills and knowledge faster.
         <br />
-        I have explored many languages (human languages and programming languages). Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy, specially logical thinking.
+        Beyond science and technology, I have a humanistic side. I love learning languages and I'm always looking for new ones to learn. I speak native Spanish and fluent English, and
+        I have explored many other languages. Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy.
         <br />
-        Nowadays I'm studying Systems engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
-        <br />
-        I love making projects and I'm eager to participate in new, exciting ones.
+        I am currently pursuing a degree in Systems Engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
+        Driven by a passion for creating innovative projects, I eagerly seek new and exciting opportunities to contribute my skills.
+
       </span>
     </div>
   )
