@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { IoMdCloseCircle } from "react-icons/io";
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { BiSolidVolumeMute, BiSolidVolumeFull, BiMath } from 'react-icons/bi'
-import { FaChevronCircleLeft, FaChevronCircleRight, FaCss3, FaCss3Alt, FaHtml5, FaNode, FaPython, FaReact, FaUsers } from 'react-icons/fa'
+import { FaChevronCircleLeft, FaChevronCircleRight, FaCss3Alt, FaHtml5, FaNode, FaPython, FaReact, FaUsers } from 'react-icons/fa'
 import { FaBoltLightning } from "react-icons/fa6";
 import { SiGnubash, SiMongodb } from "react-icons/si";
 import { HiMail } from 'react-icons/hi'
@@ -64,7 +64,7 @@ function App() {
         It features posting tweets, following users, liking, commenting, notifications, editing profile, and more.`
       ,
       link: 'https://github.com/juanstakys/twitter-clone',
-      images: ['/images/twitter_clone/home.png', '/images/twitter_clone/notifications.png'],
+      images: ['/images/twitter_clone/home.webp', '/images/twitter_clone/notifications.webp', '/images/twitter_clone/post.webp', '/images/twitter_clone/replies.webp', '/images/twitter_clone/profile.webp', '/images/twitter_clone/login.webp'],
     },
     {
       name: 'Racist-o-meter',
@@ -72,7 +72,7 @@ function App() {
         `Flutter mobile and ReactJS webapp that uses voice recognition and ChatGPT to detect if a satetement is racist or not. It also gives a brief explanation of why it is racist, and uses MongoDB to save new responses and avoid redundant requests to the ChatGPT API. The backend uses NodeJS.`
       ,
       link: 'https://github.com/juanstakys/racist-o-meter',
-      images: ['/images/racist_o_meter/racistScreen.jpg', '/images/racist_o_meter/resopnseNotRacist.jpg', '/images/racist_o_meter/responseRacist.jpg'],
+      images: ['/images/racist_o_meter/racistScreen.webp', '/images/racist_o_meter/resopnseNotRacist.webp', '/images/racist_o_meter/responseRacist.webp'],
     },
     {
       name: 'Ajedrez a voz (Chess by voice)',
@@ -81,25 +81,25 @@ function App() {
         Great for people practicing chess coordinates. It uses the Web Speech API and the Chess.js library for validating moves.`
       ,
       link: 'https://github.com/juanstakys/ajedrez-a-voz',
-      images: ['/images/ajedrez_a_voz/starting_position.png', '/images/ajedrez_a_voz/after_several_moves.png'],
+      images: ['/images/ajedrez_a_voz/starting_position.webp', '/images/ajedrez_a_voz/after_several_moves.webp'],
     },
     {
       name: 'Conteo de palabras conocidas (Known words counter)',
       description: "My first original project: A Python program that shows random words from the Spanish dictionary, one at the time, and by selecting which ones you know and which ones you don't it estimates how many words of the dictionary you know. You can also click 'Quiero aprenderla' to open a tab with the dictionary definition of the word. It uses Tkinter for the GUI",
       link: 'https://github.com/juanstakys/conteo-de-palabras-conocidas',
-      images: ['/images/conteo_de_palabras_conocidas/1.png', '/images/conteo_de_palabras_conocidas/2.png', '/images/conteo_de_palabras_conocidas/3.png'],
+      images: ['/images/conteo_de_palabras_conocidas/1.webp', '/images/conteo_de_palabras_conocidas/2.webp', '/images/conteo_de_palabras_conocidas/3.webp'],
     },
     {
       name: 'Email excel extractor',
       description: "Python script that uses Gmail's API to extract emails with a specific subject and saves all Excel attachments. It uses OAuth2.0 for authentication.",
       link: 'https://github.com/juanstakys/email-excel-extractor',
-      images: ['/images/email_excel_extractor/1.png', '/images/email_excel_extractor/2.png', '/images/email_excel_extractor/3.png', '/images/email_excel_extractor/4.png'],
+      images: ['/images/email_excel_extractor/1.webp', '/images/email_excel_extractor/2.webp', '/images/email_excel_extractor/3.webp', '/images/email_excel_extractor/4.webp'],
     },
     {
       name: 'Proyecto IOT (Olimpiadas INET) - IOT Project (INET Olympiads)',
       description: 'At the INET 2021 virtual Olympics we were asked to solve a problem that arose in times of COVID-19. It is based on creating a capacity management system, for that we implement web and Arduino technologies.',
       link: 'https://github.com/tgcorias/INET-Grupo-8',
-      images: ['/images/iot/iot.jpg'],
+      images: ['/images/iot/iot.webp'],
     }
   ]
 
@@ -139,7 +139,7 @@ function App() {
           <li className='flex flex-row gap-2 items-center'> <FaBoltLightning />
             Fast learning</li>
           <li className='flex flex-row gap-2 items-center'></li>
-          <li className='flex flex-row gap-2 items-center'><FaUsers /> Team work</li>
+          <li className='flex flex-row gap-2 items-center'><FaUsers /> Teamwork</li>
         </ul>
       </div>
     </div >
