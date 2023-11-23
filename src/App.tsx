@@ -112,7 +112,7 @@ function App() {
           <br />
           Beyond science and technology, I have a humanistic side. I love learning languages and I'm always looking for new ones to learn. I speak native Spanish and fluent English. In my teens I've worked as a tutor for my classmates and people that needed help for school. I have also developed a strong interest in linguistics and philosophy. Nowadays I'm focused on my engineering career and learning French.
           <br />
-          I am currently pursuing a degree in Systems Engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
+          I'm currently pursuing a degree in Systems Engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
           Driven by a passion for creating innovative projects, I eagerly seek new and exciting opportunities to contribute my skills.
 
         </span>
