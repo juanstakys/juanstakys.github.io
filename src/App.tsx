@@ -110,7 +110,7 @@ function App() {
           Hi! I'm a passionate programmer from <span className='text-blue-500'>Argentina</span>, with a fervor for MATHS and LANGUAGE LEARNING. I've always been interested in technology and at 15 I started programming in C++. I engaged in Maths Olympiads at around the same age, until I finished secondary education.
           There, I discovered that I wanted to dedicate my life to technology and engineering, driven by my curiosity about the world and how it works and my enthusiasm for learning everyday and solving all kind of challenging problems. I'm also very interested in science, specially physics and astronomy. I enjoy facing problems with a logical perspective: that was always my greatest strenght. In those years, I met several friends with the same interests as mine and that helped me to develop my skills and knowledge faster. Immediately after finishing secondary school, I started working as a Software Developer at a consultant company in my country.
           <br />
-          Beyond science and technology, I have a humanistic side. I love learning languages and I'm always looking for new ones to learn. I speak native Spanish and fluent English, and I have explored many other languages too. Nowadays I'm focused on learning French. I have also developed a strong interest in linguistics and philosophy.
+          Beyond science and technology, I have a humanistic side. I love learning languages and I'm always looking for new ones to learn. I speak native Spanish and fluent English. In my teens I've worked as a tutor for my classmates and people that needed help for school. I have also developed a strong interest in linguistics and philosophy. Nowadays I'm focused on my engineering career and learning French.
           <br />
           I am currently pursuing a degree in Systems Engineering at <a className='underline decoration-dotted hover:font-bold hover:text-green-600' href='https://utn.edu.ar/' target='_blank'>Universidad Tecnológica Nacional</a>.
           Driven by a passion for creating innovative projects, I eagerly seek new and exciting opportunities to contribute my skills.
@@ -120,23 +120,16 @@ function App() {
       <div className={"block sm:w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
         <h2 className='text-4xl mb-4'>Skills</h2>
         <ul className='text-xl'>
-          <li className='flex flex-row gap-2 items-center'>
-            <FaReact /> Frontend development with ReactJS</li>
+          <li className='flex flex-row gap-2 items-center'><FaReact /> Frontend development with ReactJS</li>
           <li className='flex flex-row gap-2 items-center'><FaNode /> Backend with NodeJS</li>
-          <li className='flex flex-row gap-2 items-center'><FaHtml5 />
-            HTML</li>
-          <li className='flex flex-row gap-2 items-center'><FaCss3Alt />
-            CSS</li>
+          <li className='flex flex-row gap-2 items-center'><FaHtml5 />HTML</li>
+          <li className='flex flex-row gap-2 items-center'><FaCss3Alt />CSS</li>
           <li className='flex flex-row gap-2 items-center'><SiMongodb /> MongoDB</li>
-          <li className='flex flex-row gap-2'><TbSql /> SQL
-          </li>
+          <li className='flex flex-row gap-2 items-center'><TbSql /> SQL</li>
           <li className='flex flex-row gap-2 items-center'><FaPython /> Python</li>
           <li className='flex flex-row gap-2 items-center'><SiGnubash />  Linux shell (bash)</li>
-          <li className='flex flex-row gap-2 items-center'><BiMath />
-            Logical thinking</li>
-          <li className='flex flex-row gap-2 items-center'> <FaBoltLightning />
-            Fast learning</li>
-          <li className='flex flex-row gap-2 items-center'></li>
+          <li className='flex flex-row gap-2 items-center'><BiMath />Logical thinking</li>
+          <li className='flex flex-row gap-2 items-center'> <FaBoltLightning />Fast learning</li>
           <li className='flex flex-row gap-2 items-center'><FaUsers /> Teamwork</li>
         </ul>
       </div>
