@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { IoMdCloseCircle } from "react-icons/io";
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { BiSolidVolumeMute, BiSolidVolumeFull, BiMath } from 'react-icons/bi'
-import { FaChevronCircleLeft, FaChevronCircleRight, FaCss3Alt, FaHtml5, FaNode, FaPython, FaReact, FaUsers } from 'react-icons/fa'
+import { FaChevronCircleLeft, FaChevronCircleRight, FaCss3Alt, FaGitAlt, FaHtml5, FaNode, FaPython, FaReact, FaUsers } from 'react-icons/fa'
 import { FaBoltLightning } from "react-icons/fa6";
 import { SiGnubash, SiMongodb } from "react-icons/si";
 import { HiMail } from 'react-icons/hi'
@@ -126,6 +126,7 @@ function App() {
           <li className='flex flex-row gap-2 items-center'><FaCss3Alt />CSS</li>
           <li className='flex flex-row gap-2 items-center'><SiMongodb /> MongoDB</li>
           <li className='flex flex-row gap-2 items-center'><TbSql /> SQL</li>
+          <li className='flex flex-row gap-2 items-center'><FaGitAlt /> Git</li>
           <li className='flex flex-row gap-2 items-center'><FaPython /> Python</li>
           <li className='flex flex-row gap-2 items-center'><SiGnubash />  Linux shell (bash)</li>
           <li className='flex flex-row gap-2 items-center'><BiMath />Logical thinking</li>
