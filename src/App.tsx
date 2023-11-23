@@ -4,9 +4,12 @@ import portrait from './assets/portrait.png'
 import { useState } from 'react'
 import { IoMdCloseCircle } from "react-icons/io";
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { BiSolidVolumeMute, BiSolidVolumeFull } from 'react-icons/bi'
-import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa'
+import { BiSolidVolumeMute, BiSolidVolumeFull, BiMath } from 'react-icons/bi'
+import { FaChevronCircleLeft, FaChevronCircleRight, FaCss3, FaCss3Alt, FaHtml5, FaNode, FaPython, FaReact, FaUsers } from 'react-icons/fa'
+import { FaBoltLightning } from "react-icons/fa6";
+import { SiGnubash, SiMongodb } from "react-icons/si";
 import { HiMail } from 'react-icons/hi'
+import { TbSql } from "react-icons/tb"
 import ConfettiExplosion from 'react-confetti-explosion';
 import * as Tone from 'tone'
 import toast, { Toaster } from 'react-hot-toast';
@@ -117,11 +120,29 @@ function App() {
         </span>
       </div>
       <div className={"block sm:w-3/4 mb-4 mx-auto border-1 px-4 py-3 rounded-xl shadow-md bg-gradient-to-b from-white to-neutral-100 border-2"}>
-        <span className='text-md'>
-
-        </span>
+        <h2 className='text-4xl mb-4'>Skills</h2>
+        <ul className='text-xl'>
+          <li className='flex flex-row gap-2 items-center'>
+            <FaReact /> Frontend development with ReactJS</li>
+          <li className='flex flex-row gap-2 items-center'><FaNode /> Backend with NodeJS</li>
+          <li className='flex flex-row gap-2 items-center'><FaHtml5 />
+            HTML</li>
+          <li className='flex flex-row gap-2 items-center'><FaCss3Alt />
+            CSS</li>
+          <li className='flex flex-row gap-2 items-center'><SiMongodb /> MongoDB</li>
+          <li className='flex flex-row gap-2'><TbSql /> SQL
+          </li>
+          <li className='flex flex-row gap-2 items-center'><FaPython /> Python</li>
+          <li className='flex flex-row gap-2 items-center'><SiGnubash />  Linux shell (bash)</li>
+          <li className='flex flex-row gap-2 items-center'><BiMath />
+            Logical thinking</li>
+          <li className='flex flex-row gap-2 items-center'> <FaBoltLightning />
+            Fast learning</li>
+          <li className='flex flex-row gap-2 items-center'></li>
+          <li className='flex flex-row gap-2 items-center'><FaUsers /> Team work</li>
+        </ul>
       </div>
-    </div>
+    </div >
   )
 
   interface ProjectCardProps {
@@ -203,7 +224,7 @@ function App() {
   const ModalCarousel = ({ images }: { images: Array<string> }) => (
     <>
       <div
-        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none select-none"
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           {/*content*/}
