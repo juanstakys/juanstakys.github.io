@@ -67,6 +67,13 @@ function App() {
       images: ['/images/twitter_clone/home.webp', '/images/twitter_clone/notifications.webp', '/images/twitter_clone/post.webp', '/images/twitter_clone/replies.webp', '/images/twitter_clone/profile.webp', '/images/twitter_clone/login.webp'],
     },
     {
+      name: 'Wordle clone',
+      description:
+        `Wordle is a game where you have to guess a word by trying different combinations of letters. This is a clone of the game made with VueJS and Tailwind.`,
+      link: 'https://github.com/juanstakys/wordle-clone',
+      images: ['/images/wordle_clone/1.webp', '/images/wordle_clone/2.webp', '/images/wordle_clone/3.webp', 'images/wordle_clone/4.webp'],
+    },
+    {
       name: 'Racist-o-meter',
       description:
         `Flutter mobile and ReactJS webapp that uses voice recognition and ChatGPT to detect if a satetement is racist or not. It also gives a brief explanation of why it is racist, and uses MongoDB to save new responses and avoid redundant requests to the ChatGPT API. The backend uses NodeJS.`
