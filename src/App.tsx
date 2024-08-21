@@ -7,7 +7,7 @@ import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { BiSolidVolumeMute, BiSolidVolumeFull, BiMath } from 'react-icons/bi'
 import { FaChevronCircleLeft, FaChevronCircleRight, FaCss3Alt, FaGitAlt, FaHtml5, FaNode, FaPython, FaReact, FaUsers, FaVuejs } from 'react-icons/fa'
 import { FaBoltLightning } from "react-icons/fa6";
-import { SiGnubash, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { SiGnubash, SiMongodb, SiTailwindcss, SiNestjs } from "react-icons/si";
 import { HiMail } from 'react-icons/hi'
 import { TbSql } from "react-icons/tb"
 import ConfettiExplosion from 'react-confetti-explosion';
@@ -130,6 +130,7 @@ function App() {
           <li className='flex flex-row gap-2 items-center'><FaReact /> Frontend development with ReactJS</li>
           <li className='flex flex-row gap-2 items-center'><FaVuejs /> Frontend development with VueJS</li>
           <li className='flex flex-row gap-2 items-center'><FaNode /> Backend with NodeJS</li>
+          <li className='flex flex-row gap-2 items-center'><SiNestjs /> Backend with NestJS</li>
           <li className='flex flex-row gap-2 items-center'><FaHtml5 />HTML</li>
           <li className='flex flex-row gap-2 items-center'><FaCss3Alt />CSS</li>
           <li className='flex flex-row gap-2 items-center'><SiTailwindcss />
